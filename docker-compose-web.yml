@@ -4,5 +4,6 @@ services:
   whoami:
     image: jwilder/whoami
     environment:
-      - VIRTUAL_HOST=demo.io
-      - LETSENCRYPT_HOST=demo.io
+      - VIRTUAL_HOST=practice.backsoul.xyz
+      - LETSENCRYPT_HOST=practice.backsoul.xyz
+      - LETSENCRYPT_EMAIL=danielsarmientoenterprise@gmail.com
