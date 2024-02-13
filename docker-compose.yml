@@ -12,6 +12,8 @@ services:
       - nginx_certs:/etc/nginx/certs:ro
       - nginx_vhosts:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
+    networks:
+      - web
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -23,7 +25,14 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - nginx_certs:/etc/nginx/certs:rw
+    networks:
+      - web
 volumes:
   nginx_certs:
   nginx_vhosts:
   nginx_html:
+
+
+networks:
+  web:
+    external: true
